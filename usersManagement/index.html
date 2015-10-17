@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "userManagementApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Users Management Application</title>
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<!-- JS -->
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/angular-resource.min.js"></script>
+
+	<script src="js/app.js"></script>
+	<script src="js/service.js"></script>
+</head>
+
+<body>
+	<div ng-controller = "userManagementCtrl" class="container-fluid">
+		<div class="page-header">
+			<h1>Users: </h1>
+		</div>
+
+		<div class="jumbotron">
+			<table class="table table-striped center-table">
+				<thead>
+				<tr>
+					<th>#</th>
+					<th>id</th>
+					<th>name</th>
+					<th>surname</th>
+					<th>date of birth</th>
+					<th>mobile number</th>
+					<th>address (city + street + house number)</th>
+					<th ng-hide="editSelectedFlag==true" >
+						<a class = "btn btn-primary" href="javascript:void(0)" ng-click="editSelected()">Edit selected</a>
+					</th>
+					<th ng-show="editSelectedFlag==true">
+						<a class="btn btn-primary" href="javascript:void(0)" ng-click="saveSelected()">Save</a>
+						<a class="btn btn-default" href="javascript:void(0)" ng-click="cancelSelected()">Cancel</a>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in datas">
+					<td ng-hide = "data.editFlag == true || (checked && editSelectedFlag==true)">
+						<input type="checkbox" ng-model="checked" id="myCheck">
+					</td>
+					<td ng-show="data.editFlag==true || (checked && editSelectedFlag==true)">*</td>
+
+					<td ng-hide="data.editFlag==true || (checked && editSelectedFlag==true)">{{data.id}}</td>
+					<td ng-show="data.editFlag==true || (checked && editSelectedFlag==true)"><input ng-model="data.id"></td>
+
+					<td ng-hide="data.editFlag==true || (checked && editSelectedFlag==true)">{{data.name}}</td>
+					<td ng-show="data.editFlag==true || (checked && editSelectedFlag==true)"><input ng-model="data.name"></td>
+
+					<td ng-hide="data.editFlag==true || (checked && editSelectedFlag==true)">{{data.surname}}</td>
+					<td ng-show="data.editFlag==true || (checked && editSelectedFlag==true)"><input ng-model="data.surname"></td>
+
+					<td ng-hide="data.editFlag==true || (checked && editSelectedFlag==true)">{{data.dateBirth}}</td>
+					<td ng-show="data.editFlag==true || (checked && editSelectedFlag==true)"><input ng-model="data.dateBirth"></td>
+
+					<td ng-hide="data.editFlag==true || (checked && editSelectedFlag==true)">{{data.mobileNumber}}</td>
+					<td ng-show="data.editFlag==true || (checked && editSelectedFlag==true)"><input ng-model="data.mobileNumber"></td>
+
+					<td ng-hide="data.editFlag==true || (checked && editSelectedFlag==true)">{{data.address}}</td>
+					<td ng-show="data.editFlag==true || (checked && editSelectedFlag==true)"><input ng-model="data.address"></td>
+
+					<td ng-hide="data.editFlag==true || (checked && editSelectedFlag==true)">
+						<a class="btn btn-primary" href="javascript:void(0)" ng-click="editData($index)" >Edit</a>
+						<a class="btn btn-danger" href="javascript:void(0)" ng-click="deleteData($index)">Delete</a>
+					</td>
+					<td ng-show="data.editFlag==true ">
+						<a class="btn btn-primary" href="javascript:void(0)" ng-click="saveData($index)">Save</a>
+						<a class="btn btn-default" href="javascript:void(0)" ng-click="cancel($index)">Cancel</a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</body>
+</html>

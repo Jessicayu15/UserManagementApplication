@@ -1,0 +1,10 @@
+[
+  { "id": "01", "name": "Amy", "surname": "Smith", "dateBirth":"02-23-1987","mobileNumber": 123456789,"address":"Poznan, Dluga 2","editFlag":false },
+  { "id": "02", "name": "Betty", "surname": "Bhagawati", "dateBirth":"03-23-1990","mobileNumber": 567824178,"address":"Delhi, Wolska 22","editFlag":false },
+  { "id": "03", "name": "Cathy", "surname": "Sachdeva", "dateBirth":"06-01-1981","mobileNumber": 876578962,"address":"Warsaw, Wolska 22","editFlag":false },
+  { "id": "04", "name": "Dan", "surname": "Lee", "dateBirth":"01-13-1990","mobileNumber": 432174125,"address":"Minsk, Garden 123","editFlag":false },
+  { "id": "05", "name": "Emily", "surname": "Johnson", "dateBirth":"02-07-1987","mobileNumber": 123498654,"address":"Edison, Vultsa 123","editFlag":false },
+  { "id": "06", "name": "Frank", "surname": "Williams", "dateBirth":"11-20-1990","mobileNumber": 567874138,"address":"New York, Grand 456","editFlag":false },
+  { "id": "07", "name": "Grace", "surname": "Sun", "dateBirth":"06-17-1989","mobileNumber": 876574158,"address":"Omaha, Calton 99","editFlag":false },
+  { "id": "08", "name": "Herry", "surname": "Brown", "dateBirth":"01-19-1985","mobileNumber": 432196325,"address":"Warsaw, Wolska 88","editFlag":false }
+]
